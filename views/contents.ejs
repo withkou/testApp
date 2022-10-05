@@ -1,0 +1,20 @@
+<%- include('header'); %>
+<body>
+    <div class="contents-wrapper">
+        <main>
+            <ul class="list">
+            <% contents.forEach((contents) => { %>
+            <li>
+                <% if (contents.category === 'private') {%>
+                <i>プライベート記事</i>
+                <% } %>
+                <h2><%= contents.title %></h2>
+                <p><%= contents.summary %></p>
+                <a href="/contents/<%= contents.id %>">記事を読む</a>
+            </li>
+            <% }) %>
+            </ul>
+        </main>
+    </div>
+</body>
+<%- include('footer'); %>

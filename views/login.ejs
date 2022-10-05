@@ -1,0 +1,21 @@
+<%- include('header'); %>
+<body>
+
+    <div class="sign">
+        <div class="container">
+          <h1><a href="/contents">ニュース速報</a></h1>
+          <div class="part">
+            <h2>ログイン</h2>
+            <form action="/login" method="post">
+              <p>メールアドレス</p>
+              <input type="text" name="email">
+              <p>パスワード</p>
+              <input type="password" name="password">
+              <input type="submit" value="ログイン">
+              <a href="/contents">記事一覧にもどる</a>
+            </form>
+          </div>
+        </div>
+      </div>
+</body>
+<%- include('footer'); %>

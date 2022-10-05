@@ -1,0 +1,28 @@
+<%- include('header'); %>
+<body>
+    <div class="sign">
+      <div class="container">
+        <div class="panel">
+          <h2>新規登録</h2>
+          <% if (errors.length > 0) { %>
+            <ul class="errors">
+              <% errors.forEach(error=>{%>
+                <li><%= error %></li>
+              <% }); %>
+            </ul>
+          <% } %>
+          <form action="/signup" method="post">
+            <p>ユーザー名</p>
+            <input name="username" type="text">
+            <p>メールアドレス</p>
+            <input name="email" type="text">
+            <p>パスワード</p>
+            <input name="password" type="password">
+            <input type="submit" value="登録する">
+            <a href="/contents">一覧にもどる</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+<%- include('footer'); %>

@@ -1,0 +1,27 @@
+<%- include('header'); %>
+<body>
+
+    <main>
+      <div class="page">
+        <% if (contents.category === 'open') { %>
+          <h1><%= contents.title %></h1>
+          <p><%= contents.content %></p>
+        <% } %>
+        <% if (contents.category === 'private') { %>
+          <i>プライベート記事</i>
+          <h1><%= contents.title %></h1>
+          <% if (locals.isLoggedIn) { %>
+            <p><%= contents.content %></p>
+          <% } else { %>
+            <div class="page-login">
+                <h2>記事を読むにはユーザー登録</h2>
+                <p>この記事はユーザー登録し、ログイン後に閲覧可能です</p>
+                <a class="btn" href="/login">ログイン</a>
+            </div>
+          <% } %>
+        <% } %>
+      </div>
+      <div><a class="btn sub" href="/contents">記事一覧</a></div>
+    </main>
+  </body>
+<%- include('footer'); %>
